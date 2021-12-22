@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
 
 namespace Fiorella.Models
 {
@@ -9,5 +10,6 @@ namespace Fiorella.Models
         public string Logo { get; set; }
         public string facebook_url { get; set; }
         public string twitter_url { get; set; }
+        public IFormFile file { get; set; }
     }
 }

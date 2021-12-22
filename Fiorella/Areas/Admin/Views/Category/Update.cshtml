@@ -1,18 +1,15 @@
-﻿
-@model Category
+﻿@model Category
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Update";
 }
 
-<div class="row">
+<div class="content-wrapper">
+    <div class="row">
     <div class="col-md-6 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Default form</h4>
-                <p class="card-description">
-                    Create Category
-                </p>
-                <form class="forms-sample" method="post" asp-action="Create">
+                <h4 class="card-title">Update Category</h4>
+                <form class="forms-sample" method="post" asp-controller="Category" asp-action="Update">
 
                     <div class="form-group">
                         <label asp-for="Name">Name</label>
@@ -24,20 +21,20 @@
                         <textarea class="form-control" asp-for="Description" id="description" placeholder="Description"></textarea>
                         <span asp-validation-for="Description"></span>
                     </div>
-
-                    <button type="submit" class="btn btn-primary me-2" asp-controller="Category" asp-action="Create">Submit</button>
-                    <button class="btn btn-light" asp-controller="Category" asp-action="index">Cancel</button>
-
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <button class="btn btn-light">Cancel</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+</div>
 
 @section script {
-    <script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
     <script>
         ClassicEditor
             .create(document.querySelector('#description'))
@@ -46,3 +43,5 @@
             });
     </script>
 }
+
+
