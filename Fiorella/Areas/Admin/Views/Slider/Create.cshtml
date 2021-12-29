@@ -1,0 +1,47 @@
+﻿@model MultipleViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="content-wrapper">
+    <div class="row">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Default form</h4>
+                <p class="card-description">
+                    Create Category
+                </p>
+                <form class="forms-sample" method="post" asp-action="Create" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label asp-for="@Model.Slider.Title"></label>
+                        <input class="form-control" asp-for="@Model.Slider.Title" id="exampleInputUsername1" placeholder="Name">
+                        <span asp-validation-for="@Model.Slider.Title"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.Slider.Description"></label>
+                        <input class="form-control" asp-for="@Model.Slider.Description" id="exampleInputUsername1" placeholder="Name">
+                        <span asp-validation-for="@Model.Slider.Description"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.Slider.signFile"></label>
+                        <input class="form-control" asp-for="@Model.Slider.signFile" id="exampleInputUsername1" placeholder="Name" accept="image/*">
+                        <span asp-validation-for="@Model.Slider.signFile"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="@Model.files"></label>
+                        <input class="form-control" asp-for="@Model.files" id="exampleInputUsername1" placeholder="Name" accept="image/*">
+                        <span asp-validation-for="@Model.files"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <button class="btn btn-light" asp-action="create">Cancel</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+

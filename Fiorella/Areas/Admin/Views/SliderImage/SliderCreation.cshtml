@@ -1,0 +1,21 @@
+﻿@model MultipleViewModel
+@{
+    ViewData["Title"] = "SliderCreation";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Slider Creation Form</h4>
+            <form class="forms-sample" enctype="multipart/form-data" method="post" asp-controller="SliderImage" asp-action="AddMultipleSlider">
+                <div class="form-group">
+                    <label for="exampleInputUsername1" asp-for="files">Name</label>
+                    <input type="file" accept="image/*" multiple class="form-control" asp-for="files" placeholder="Image">
+                    <span class="text-danger" asp-validation-for="files"></span>
+                </div>
+                <button type="submit" class="btn btn-primary me-2">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -18,11 +18,15 @@ namespace Fiorella.Controllers
         {
             List<Category> categories = _context.Categories.ToList();
             List<Product> products = _context.Products.Take(4).ToList();
+            List<SliderImage> sliderImages = _context.SliderImages.ToList();
+            List<Slider> sliders = _context.Slider.ToList();
 
             HomeIndexViewModel model = new HomeIndexViewModel()
             {
                 categories = categories,
                 products = products,
+                sliderImages = sliderImages,
+                slider = sliders,
             };
             return View(model);
         }

@@ -35,7 +35,7 @@ namespace Fiorella.Areas.Admin.Controllers
             return View(layoutI);
         }
 
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return View();
         }

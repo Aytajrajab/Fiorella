@@ -1,0 +1,29 @@
+﻿@model SliderImage
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="row">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Default form</h4>
+                <p class="card-description">
+                    Create Category
+                </p>
+                <form class="forms-sample" method="post" asp-action="Update" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                        <label asp-for="File"></label>
+                        <input class="form-control" asp-for="File" id="exampleInputUsername1" placeholder="Name" accept="image/*">
+                        <span asp-validation-for="File"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary me-2">Submit</button>
+                    <button class="btn btn-light" asp-controller="Category" asp-action="index">Cancel</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

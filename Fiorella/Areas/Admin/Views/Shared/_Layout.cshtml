@@ -203,6 +203,32 @@
             </div>
           </li>
           <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-file" aria-expanded="false" aria-controls="ui-file">
+              <i class="mdi mdi-circle-outline menu-icon"></i>
+              <span class="menu-title">Slider Image List</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-file">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" asp-controller="SliderImage" asp-action="Index">Slider Image List</a></li>
+                <li class="nav-item"> <a class="nav-link" asp-controller="SliderImage" asp-action="Create">New Slider Image</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-slider" aria-expanded="false" aria-controls="ui-slider">
+              <i class="mdi mdi-circle-outline menu-icon"></i>
+              <span class="menu-title">Slider List</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-slider">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" asp-controller="Slider" asp-action="Index">Slider List</a></li>
+                <li class="nav-item"> <a class="nav-link" asp-controller="Slider" asp-action="Create">New Slider</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" asp-controller="Layout" asp-action="Index">
               <i class="mdi mdi-view-headline menu-icon"></i>
               <span class="menu-title">Layout</span>

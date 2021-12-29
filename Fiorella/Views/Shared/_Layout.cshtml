@@ -18,7 +18,14 @@
 <body>
 
     <!-- HEADER START -->
-
+    @if (User.Identity.IsAuthenticated)
+    {
+        <a asp-controller="Account" asp-action="Logout">Logout</a>
+    }
+    else
+    {
+        <a asp-controller="Account" asp-action="Login">Login</a>
+    }
     <header>
         <div class="container">
             <div class="row">

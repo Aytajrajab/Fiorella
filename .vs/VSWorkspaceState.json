@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Fiorella",
+    "\\Fiorella\\Areas",
+    "\\Fiorella\\Areas\\Admin",
+    "\\Fiorella\\Areas\\Admin\\Controllers",
+    "\\Fiorella\\Areas\\Admin\\Utils"
   ],
   "SelectedNode": "\\Fiorella.sln",
   "PreviewInSolutionExplorer": false

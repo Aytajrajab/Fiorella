@@ -1,0 +1,19 @@
+﻿@model SliderImage
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+                  <div class="card">
+                    <div class="card-body">
+                      <img src="~/img/@Model.Image"/>
+                    </div>
+                    <form method="post" asp-controller="SliderImage" asp-action="Delete">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                  </div>
+                </div>
+</div>
+
+

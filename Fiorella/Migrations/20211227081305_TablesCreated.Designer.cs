@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Fiorella.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211220084319_CreatedLayoutTable")]
-    partial class CreatedLayoutTable
+    [Migration("20211227081305_TablesCreated")]
+    partial class TablesCreated
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -90,6 +90,47 @@ namespace Fiorella.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("Fiorella.Models.Slider", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sign")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Slider");
+                });
+
+            modelBuilder.Entity("Fiorella.Models.SliderImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SliderId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SliderId");
+
+                    b.ToTable("SliderImages");
+                });
+
             modelBuilder.Entity("Fiorella.Models.Product", b =>
                 {
                     b.HasOne("Fiorella.Models.Category", "Category")
@@ -101,9 +142,25 @@ namespace Fiorella.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("Fiorella.Models.SliderImage", b =>
+                {
+                    b.HasOne("Fiorella.Models.Slider", "slider")
+                        .WithMany("sliderImages")
+                        .HasForeignKey("SliderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("slider");
+                });
+
             modelBuilder.Entity("Fiorella.Models.Category", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("Fiorella.Models.Slider", b =>
+                {
+                    b.Navigation("sliderImages");
                 });
 #pragma warning restore 612, 618
         }
